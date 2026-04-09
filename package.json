@@ -1,0 +1,21 @@
+{
+  "name": "greywolf-terminal",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "contracts"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "build": "npm run build --workspace=frontend",
+    "compile": "npm run compile --workspace=contracts",
+    "test:contracts": "npm run test --workspace=contracts"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
